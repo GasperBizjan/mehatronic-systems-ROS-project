@@ -1,0 +1,4 @@
+<launch>
+    <include file="$(find fanuc_lrmate200id_moveit_config)/launch/demo_gazebo.launch" />
+    <node name="move_to_pose" pkg="fanuc_manipulation" type="move_to_pose" output="screen" />
+</launch>

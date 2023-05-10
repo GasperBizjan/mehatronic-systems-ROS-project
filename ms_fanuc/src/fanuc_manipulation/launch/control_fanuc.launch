@@ -1,0 +1,8 @@
+<launch>
+    <include file="$(find fanuc_lrmate200id_moveit_config)/launch/demo_gazebo.launch">
+        <arg name="rviz_config_file" value="$(find fanuc_manipulation)/launch/movement_with_object.rviz"/>
+    </include>
+    <param name="box_description" command="cat '$(find camera_exercise)/urdf/box.urdf'"/>
+    <node name="box_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param box_description -model box -x 0.2 -y 0.3 -z 0.1"/>
+    <node name="box_tf_boradcaster" pkg="fanuc_manipulation" type="object_tf_broadcaster" args="box" output="screen" />
+</launch>

@@ -1,0 +1,19 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/bizjan/ms_fanuc/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/bizjan/ms_fanuc/src/fanuc_manipulation/include/**",
+        "/home/bizjan/ms_fanuc/src/gazebo_ros_link_attacher/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

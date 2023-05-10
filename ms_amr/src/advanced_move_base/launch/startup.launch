@@ -1,0 +1,15 @@
+<launch>
+    <!-- Spawn mir robot in gazebo -->
+    <include file="$(find mir_gazebo)/launch/mir_maze_world.launch" />
+    <!-- Start amcl -->
+    <include file="$(find mir_navigation)/launch/amcl.launch">
+        <arg name="initial_pose_x" value="10" />
+        <arg name="initial_pose_y" value="10" />
+    </include>
+    <!-- Start navigation -->
+    <include file="$(find mir_navigation)/launch/start_planner.launch">
+        <arg name="map_file" value="$(find mir_gazebo)/maps/maze.yaml" />
+    </include>
+    <!-- Start Rviz -->
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find advanced_move_base)/rviz/navigation.rviz" />
+</launch>
